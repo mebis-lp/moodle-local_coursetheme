@@ -23,11 +23,15 @@ class edit_theme_form extends moodleform {
         $themeId = $this->_customdata['id'];
         $mform->addElement('header','theme', 'Theme-Einstellungen');
         $mform->addElement('hidden', 'id');
+        $mform->setType('id', PARAM_INT);
         $mform->addElement('text', 'name', 'Kurzname');
         $mform->setType('name', PARAM_TEXT);
         $mform->addElement('text', 'displayname', 'Anzeigename');
-        $mform->addElement('textarea', 'css', 'CSS-Regeln');
-        $mform->addElement('textarea', 'js', 'Javaskript');
+        $mform->setType('displayname', PARAM_TEXT);
+        $mform->addElement('textarea', 'css', 'CSS-Regeln', ['rows' => 10]);
+        $mform->setType('css', PARAM_TEXT);
+        $mform->addElement('textarea', 'js', 'Javaskript', ['rows' => 10]);
+        $mform->setType('js', PARAM_TEXT);
         $this->add_action_buttons();
         if ($themeId) {
             $theme = $DB->get_record(Theme_table::TABLE_NAME,['id' => $themeId]);

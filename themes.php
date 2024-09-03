@@ -2,6 +2,8 @@
 
 require_once __DIR__.'/../../config.php';
 
+use local_coursetheme\ui\themelist_table;
+
 global $PAGE;
 
 $PAGE->set_url(new moodle_url('/local/coursetheme/themes.php'));
@@ -21,6 +23,8 @@ $renderer = $PAGE->get_renderer('local_coursetheme');
 
 echo $renderer->header();
 
-echo 'FIXME Themeliste mit Bearbeiten-Knöpfen';
+$themeTable = new themelist_table('coursetheme-theme-table');
+$themeTable->define_baseurl(new moodle_url('/local/coursetheme/themes.php'));
+$themeTable->out(25, false);
 
 echo $renderer->footer();

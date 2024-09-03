@@ -25,8 +25,6 @@ $PAGE->set_heading('Theme X editieren');
 /** @var local_coursetheme_renderer|core_renderer $renderer */
 $renderer = $PAGE->get_renderer('local_coursetheme');
 
-echo $renderer->header();
-
 $theme = $DB->get_record(Theme_table::TABLE_NAME,['id' => $id]);
 $themeForm = new edit_theme_form(null, ['id'=> $id]);
 
@@ -40,6 +38,8 @@ if ($themeForm->is_cancelled()) {
     $DB->update_record(Theme_table::TABLE_NAME, $data);
     redirect($returnurl);
 }
+
+echo $renderer->header();
 
 $themeForm->display();
 
