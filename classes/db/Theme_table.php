@@ -4,11 +4,11 @@
  * Date: 03.09.2024
  */
 
-namespace local_coursethemes\db;
+namespace local_coursetheme\db;
 
-class Coursetheme_themes_table {
+class Theme_table {
 
-    const TABLE_NAME = 'Coursetheme_themes_table';
+    const TABLE_NAME = 'coursetheme_theme';
 
     const FIELD_ID = 'id';
 

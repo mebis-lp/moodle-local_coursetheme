@@ -18,7 +18,7 @@
             </KEYS>
         </TABLE>
 
-        <TABLE NAME="coursetheme_course_themes" COMMENT="Assigning component themes to courses">
+        <TABLE NAME="coursetheme_course_theme" COMMENT="Assigning component themes to courses">
             <FIELDS>
                 <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" COMMENT="Unique ID"/>
                 <FIELD NAME="courseid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Course ID where we set the themes."/>
