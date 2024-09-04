@@ -29,24 +29,24 @@ use local_coursetheme\db\Theme_table;
 use local_coursetheme\db\Coursetheme_table;
 
 function local_coursetheme_before_footer() {
-    global $PAGE, $COURSE, $DB;
-    $courseId = $COURSE->id;
-    if (!$courseId) return;
-    $coursetheme = $DB->get_record(Coursetheme_table::TABLE_NAME, ['courseid' => $courseId]);
-    if (!$coursetheme) return;
-    $themeId = $coursetheme->{Coursetheme_table::FIELD_COURSE_THEME_ID};
-    if (!$themeId) return;
-    $theme = $DB->get_record(Theme_table::TABLE_NAME, ['id' => $themeId]);
-    if (!$theme) return;
-    $css = $theme->{Theme_table::FIELD_CSS};
-    $js = $theme->{Theme_table::FIELD_js};
+    // global $PAGE, $COURSE, $DB;
+    // $courseId = $COURSE->id;
+    // if (!$courseId) return;
+    // $coursetheme = $DB->get_record(Coursetheme_table::TABLE_NAME, ['courseid' => $courseId]);
+    // if (!$coursetheme) return;
+    // $themeId = $coursetheme->{Coursetheme_table::FIELD_COURSE_THEME_ID};
+    // if (!$themeId) return;
+    // $theme = $DB->get_record(Theme_table::TABLE_NAME, ['id' => $themeId]);
+    // if (!$theme) return;
+    // $css = $theme->{Theme_table::FIELD_CSS};
+    // $js = $theme->{Theme_table::FIELD_js};
 
-    if ($css) {
-        echo '<style>';
-        echo $css;
-        echo '</style>';
-    }
-    if ($js) {
-        echo $js;
-    }
+    // if ($css) {
+    //     echo '<style>';
+    //     echo $css;
+    //     echo '</style>';
+    // }
+    // if ($js) {
+    //     echo $js;
+    // }
 }

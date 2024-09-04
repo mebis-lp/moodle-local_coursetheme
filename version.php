@@ -29,4 +29,4 @@ $plugin->component = 'local_coursetheme';
 $plugin->release = '0.0.1';
 $plugin->requires = 2022112800;
 $plugin->maturity = MATURITY_ALPHA;
-$plugin->version = 2024090300;
+$plugin->version = 2024090303;
