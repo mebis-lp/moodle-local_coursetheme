@@ -1,8 +1,6 @@
 <?php
 defined('MOODLE_INTERNAL') || die();
 
-use admin_externalpage;
-
 /** @var bool $hassiteconfig */
 if ($hassiteconfig) {
     /** @var admin_root $ADMIN */
