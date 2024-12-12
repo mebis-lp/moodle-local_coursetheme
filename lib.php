@@ -42,11 +42,11 @@ function local_coursetheme_before_footer() {
     // $js = $theme->{Theme_table::FIELD_js};
 
     // if ($css) {
-    //     echo '<style>';
-    //     echo $css;
-    //     echo '</style>';
+    // echo '<style>';
+    // echo $css;
+    // echo '</style>';
     // }
     // if ($js) {
-    //     echo $js;
+    // echo $js;
     // }
 }

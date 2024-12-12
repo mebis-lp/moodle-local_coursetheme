@@ -16,10 +16,7 @@
 
 namespace local_coursetheme\local;
 
-use context_block;
-use context_system;
 use local_coursetheme\fakehook\FakehookUtils;
-use stdClass;
 
 /**
  * Hook listener callbacks.
@@ -73,15 +70,23 @@ class hook_callbacks {
      * @param \core\hook\output\before_footer_html_generation $hook the before footer html generation hook object
      */
     public static function handle_before_footer_html_generation(\core\hook\output\before_footer_html_generation $hook): void {
-        global $PAGE, $COURSE, $DB;
-        $courseId = $COURSE->id;
-        if (!$courseId) return;
-        $coursetheme = $DB->get_record(\local_coursetheme\db\Coursetheme_table::TABLE_NAME, ['courseid' => $courseId]);
-        if (!$coursetheme) return;
-        $themeId = $coursetheme->{\local_coursetheme\db\Coursetheme_table::FIELD_COURSE_THEME_ID};
-        if (!$themeId) return;
-        $theme = $DB->get_record(\local_coursetheme\db\Theme_table::TABLE_NAME, ['id' => $themeId]);
-        if (!$theme) return;
+        global $COURSE, $DB;
+        $courseid = $COURSE->id;
+        if (!$courseid) {
+            return;
+        }
+        $coursetheme = $DB->get_record(\local_coursetheme\db\Coursetheme_table::TABLE_NAME, ['courseid' => $courseid]);
+        if (!$coursetheme) {
+            return;
+        }
+        $themeid = $coursetheme->{\local_coursetheme\db\Coursetheme_table::FIELD_COURSE_THEME_ID};
+        if (!$themeid) {
+            return;
+        }
+        $theme = $DB->get_record(\local_coursetheme\db\Theme_table::TABLE_NAME, ['id' => $themeid]);
+        if (!$theme) {
+            return;
+        }
         $css = $theme->{\local_coursetheme\db\Theme_table::FIELD_CSS};
         $js = $theme->{\local_coursetheme\db\Theme_table::FIELD_js};
 
@@ -94,5 +99,4 @@ class hook_callbacks {
             echo $js;
         }
     }
-
 }

@@ -19,10 +19,11 @@
  *
  * @package     local_coursetheme
  * @category    string
- * @copyright   2024 ISB Bayern24 ISB Bayern
+ * @copyright   2024 ISB Bayern
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
 $string['pluginnname'] = 'local_coursetheme plugin';
+$string['privacy:metadata'] = 'This plugin does not store personal data.';
